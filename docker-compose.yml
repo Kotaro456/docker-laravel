@@ -23,12 +23,14 @@ services: # servicesの下には、作りたいコンテナの定義を書いて
   mysql:
     image: mysql:5.7
 
+    container_name: mysqldb
+
     # 環境変数をコンテナに設定している
     environment:
       MYSQL_DATABASE: docker_laravel_db
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: root
+      MYSQL_USER: docker_laravel_user
       MYSQL_PASSWORD: password
       TZ: Asia/Tokyo
     ports:
-      - "3306:3306"
+      - 3306:3306
